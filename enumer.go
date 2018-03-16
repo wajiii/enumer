@@ -4,9 +4,9 @@ import "fmt"
 
 // Arguments to format are:
 //	[1]: type name
-const stringNameToValueMethod = `// %[1]sString retrieves an enum value from the enum constants string name.
+const stringNameToValueMethod = `// %[1]sValue retrieves an enum value from the enum constants string name.
 // Throws an error if the param is not part of the enum.
-func %[1]sString(s string) (%[1]s, error) {
+func %[1]sValue(s string) (%[1]s, error) {
 	if val, ok := _%[1]sNameToValueMap[s]; ok {
 		return val, nil
 	}
@@ -102,7 +102,7 @@ func (i *%[1]s) UnmarshalJSON(data []byte) error {
 	}
 
 	var err error
-	*i, err = %[1]sString(s)
+	*i, err = %[1]sValue(s)
 	return err
 }
 `
@@ -122,7 +122,7 @@ func (i %[1]s) MarshalText() ([]byte, error) {
 // MarshalText implements the encoding.TextUnmarshaler interface for %[1]s
 func (i *%[1]s) UnmarshalText(text []byte) error {
 	var err error
-	*i, err = %[1]sString(string(text))
+	*i, err = %[1]sValue(string(text))
 	return err
 }
 `
@@ -147,7 +147,7 @@ func (i *%[1]s) UnmarshalYAML(unmarshal func(interface{}) error) error {
 	}
 
 	var err error
-	*i, err = %[1]sString(s)
+	*i, err = %[1]sValue(s)
 	return err
 }
 `

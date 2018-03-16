@@ -92,9 +92,9 @@ var _DayNameToValueMap = map[string]Day{
 	_DayName[44:50]: 6,
 }
 
-// DayString retrieves an enum value from the enum constants string name.
+// DayValue retrieves an enum value from the enum constants string name.
 // Throws an error if the param is not part of the enum.
-func DayString(s string) (Day, error) {
+func DayValue(s string) (Day, error) {
 	if val, ok := _DayNameToValueMap[s]; ok {
 		return val, nil
 	}
@@ -150,9 +150,9 @@ var _NumberNameToValueMap = map[string]Number{
 	_NumberName[6:11]: 3,
 }
 
-// NumberString retrieves an enum value from the enum constants string name.
+// NumberValue retrieves an enum value from the enum constants string name.
 // Throws an error if the param is not part of the enum.
-func NumberString(s string) (Number, error) {
+func NumberValue(s string) (Number, error) {
 	if val, ok := _NumberNameToValueMap[s]; ok {
 		return val, nil
 	}
@@ -230,9 +230,9 @@ var _GapNameToValueMap = map[string]Gap{
 	_GapName_2[0:6]:   11,
 }
 
-// GapString retrieves an enum value from the enum constants string name.
+// GapValue retrieves an enum value from the enum constants string name.
 // Throws an error if the param is not part of the enum.
-func GapString(s string) (Gap, error) {
+func GapValue(s string) (Gap, error) {
 	if val, ok := _GapNameToValueMap[s]; ok {
 		return val, nil
 	}
@@ -289,9 +289,9 @@ var _NumNameToValueMap = map[string]Num{
 	_NumName[10:12]: 2,
 }
 
-// NumString retrieves an enum value from the enum constants string name.
+// NumValue retrieves an enum value from the enum constants string name.
 // Throws an error if the param is not part of the enum.
-func NumString(s string) (Num, error) {
+func NumValue(s string) (Num, error) {
 	if val, ok := _NumNameToValueMap[s]; ok {
 		return val, nil
 	}
@@ -361,9 +361,9 @@ var _UnumNameToValueMap = map[string]Unum{
 	_UnumName_1[3:6]: 254,
 }
 
-// UnumString retrieves an enum value from the enum constants string name.
+// UnumValue retrieves an enum value from the enum constants string name.
 // Throws an error if the param is not part of the enum.
-func UnumString(s string) (Unum, error) {
+func UnumValue(s string) (Unum, error) {
 	if val, ok := _UnumNameToValueMap[s]; ok {
 		return val, nil
 	}
@@ -451,9 +451,9 @@ var _PrimeNameToValueMap = map[string]Prime{
 	_PrimeName[32:35]: 43,
 }
 
-// PrimeString retrieves an enum value from the enum constants string name.
+// PrimeValue retrieves an enum value from the enum constants string name.
 // Throws an error if the param is not part of the enum.
-func PrimeString(s string) (Prime, error) {
+func PrimeValue(s string) (Prime, error) {
 	if val, ok := _PrimeNameToValueMap[s]; ok {
 		return val, nil
 	}
@@ -534,9 +534,9 @@ var _PrimeNameToValueMap = map[string]Prime{
 	_PrimeName[32:35]: 43,
 }
 
-// PrimeString retrieves an enum value from the enum constants string name.
+// PrimeValue retrieves an enum value from the enum constants string name.
 // Throws an error if the param is not part of the enum.
-func PrimeString(s string) (Prime, error) {
+func PrimeValue(s string) (Prime, error) {
 	if val, ok := _PrimeNameToValueMap[s]; ok {
 		return val, nil
 	}
@@ -567,7 +567,7 @@ func (i *Prime) UnmarshalJSON(data []byte) error {
 	}
 
 	var err error
-	*i, err = PrimeString(s)
+	*i, err = PrimeValue(s)
 	return err
 }
 `
@@ -635,9 +635,9 @@ var _PrimeNameToValueMap = map[string]Prime{
 	_PrimeName[32:35]: 43,
 }
 
-// PrimeString retrieves an enum value from the enum constants string name.
+// PrimeValue retrieves an enum value from the enum constants string name.
 // Throws an error if the param is not part of the enum.
-func PrimeString(s string) (Prime, error) {
+func PrimeValue(s string) (Prime, error) {
 	if val, ok := _PrimeNameToValueMap[s]; ok {
 		return val, nil
 	}
@@ -663,7 +663,7 @@ func (i Prime) MarshalText() ([]byte, error) {
 // MarshalText implements the encoding.TextUnmarshaler interface for Prime
 func (i *Prime) UnmarshalText(text []byte) error {
 	var err error
-	*i, err = PrimeString(string(text))
+	*i, err = PrimeValue(string(text))
 	return err
 }
 `
@@ -731,9 +731,9 @@ var _PrimeNameToValueMap = map[string]Prime{
 	_PrimeName[32:35]: 43,
 }
 
-// PrimeString retrieves an enum value from the enum constants string name.
+// PrimeValue retrieves an enum value from the enum constants string name.
 // Throws an error if the param is not part of the enum.
-func PrimeString(s string) (Prime, error) {
+func PrimeValue(s string) (Prime, error) {
 	if val, ok := _PrimeNameToValueMap[s]; ok {
 		return val, nil
 	}
@@ -764,7 +764,7 @@ func (i *Prime) UnmarshalYAML(unmarshal func(interface{}) error) error {
 	}
 
 	var err error
-	*i, err = PrimeString(s)
+	*i, err = PrimeValue(s)
 	return err
 }
 `
@@ -832,9 +832,9 @@ var _PrimeNameToValueMap = map[string]Prime{
 	_PrimeName[32:35]: 43,
 }
 
-// PrimeString retrieves an enum value from the enum constants string name.
+// PrimeValue retrieves an enum value from the enum constants string name.
 // Throws an error if the param is not part of the enum.
-func PrimeString(s string) (Prime, error) {
+func PrimeValue(s string) (Prime, error) {
 	if val, ok := _PrimeNameToValueMap[s]; ok {
 		return val, nil
 	}
@@ -871,7 +871,7 @@ func (i *Prime) Scan(value interface{}) error {
 		str = string(bytes[:])
 	}
 
-	val, err := PrimeString(str)
+	val, err := PrimeValue(str)
 	if err != nil {
 		return err
 	}
@@ -944,9 +944,9 @@ var _PrimeNameToValueMap = map[string]Prime{
 	_PrimeName[32:35]: 43,
 }
 
-// PrimeString retrieves an enum value from the enum constants string name.
+// PrimeValue retrieves an enum value from the enum constants string name.
 // Throws an error if the param is not part of the enum.
-func PrimeString(s string) (Prime, error) {
+func PrimeValue(s string) (Prime, error) {
 	if val, ok := _PrimeNameToValueMap[s]; ok {
 		return val, nil
 	}
@@ -977,7 +977,7 @@ func (i *Prime) UnmarshalJSON(data []byte) error {
 	}
 
 	var err error
-	*i, err = PrimeString(s)
+	*i, err = PrimeValue(s)
 	return err
 }
 
@@ -1000,7 +1000,7 @@ func (i *Prime) Scan(value interface{}) error {
 		str = string(bytes[:])
 	}
 
-	val, err := PrimeString(str)
+	val, err := PrimeValue(str)
 	if err != nil {
 		return err
 	}

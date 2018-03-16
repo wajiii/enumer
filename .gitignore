@@ -25,4 +25,9 @@ _testmain.go
 *.test
 *.prof
 
-.idea
+## Intellij IDEA project directory and module config files
+/.idea
+*.iml
+
+## MacOS directory Finder-view metadata
+**/.DS_Store
